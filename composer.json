@@ -1,0 +1,21 @@
+{
+    "name": "machinateur/php-sse",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Machinateur\\SSE\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marcel",
+            "email": "hello@machinateur.dev",
+            "homepage": "https://machinateur.dev"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "psr/log": "^3.0"
+    }
+}

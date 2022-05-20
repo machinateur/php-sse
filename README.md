@@ -10,6 +10,10 @@ This package implements Server-sent events in PHP, in a framework-agnostic, low-
 Yes, you've read that right, PHP 5.6 is the minimum version requirement to be able to use this package. That way, even
 legacy projects can provide SSE support to client applications.
 
+It might also be a good idea to gobble up all information
+on [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) from the MDN web docs to get yourself up
+to speed on the technology. I found it to be an excellent starting point on this topic along with low-level examples.
+
 ## Installation
 
 Via composer:
@@ -41,11 +45,26 @@ Below are additional explanations of common use-case scenarios.
 
 ### Logger support
 
+TODO
+
 ### Custom event source
+
+TODO
 
 ### Custom events
 
+TODO
+
 ### Framework integration
+
+TODO
+
+### Usage with other SSE implementations
+
+This library was inspired and influenced by [`hhxsv5/php-sse`](https://github.com/hhxsv5/php-sse), so here is how to
+achieve interoperability between the two:
+
+TODO
 
 ## About
 
@@ -71,7 +90,11 @@ Simply put, SSE allows us to send events to the client web page from the server.
 
 ### Why use this package?
 
+TODO
+
 ### When to use this package?
+
+TODO
 
 ## License
 

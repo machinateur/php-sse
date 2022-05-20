@@ -1,6 +1,6 @@
 # php-sse
 
-This package implements Server-sent events in PHP, in framework-agnostic, low-dependency and object-oriented way.
+This package implements Server-sent events in PHP, in a framework-agnostic, low-dependency and object-oriented way.
 
 ## Prerequisites
 

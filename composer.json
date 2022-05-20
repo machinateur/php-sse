@@ -2,7 +2,7 @@
     "name": "machinateur/php-sse",
     "type": "library",
     "license": "MIT",
-    "description": "This package implements Server-sent events in PHP, in framework-agnostic, low-dependency and object-oriented way.",
+    "description": "This package implements Server-sent events in PHP, in a framework-agnostic, low-dependency and object-oriented way.",
     "keywords": [
         "sse",
         "server-sent events",

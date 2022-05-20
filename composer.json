@@ -24,6 +24,9 @@
     "autoload": {
         "psr-4": {
             "Machinateur\\SSE\\": "src/"
-        }
+        },
+        "classmap": [
+            "stubs/Stringable.php"
+        ]
     }
 }

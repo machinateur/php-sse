@@ -103,7 +103,13 @@ class MessageStream implements MessageStreamInterface
      */
     public static function getRecommendedHeaders()
     {
-        return [];
+        return [
+            'Content-Type: text/event-stream',
+            'Cache-Control: no-cache',
+            'Connection: keep-alive',
+            // See https://www.nginx.com/resources/wiki/start/topics/examples/x-accel/#x-accel-buffering.
+            'X-Accel-Buffering: no',
+        ];
     }
 
     /**

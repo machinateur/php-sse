@@ -184,7 +184,7 @@ final class StreamFormat
     public static function formatLines(array $fields)
     {
         // Push all content from fields.
-        $lines = [];
+        $lines = array();
         self::pushFields($lines, $fields);
 
         if (0 === count($lines)) {

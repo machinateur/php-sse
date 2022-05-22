@@ -4,7 +4,7 @@ This package implements Server-sent events in PHP, in a framework-agnostic, low-
 
 ## Prerequisites
 
-* [PHP 5.6](https://www.php.net/downloads.php)
+* [PHP 5.6](https://www.php.net/downloads.php) or newer
 * [Composer](https://getcomposer.org/download/)
 
 Yes, you've read that right, PHP 5.6 is the minimum version requirement to be able to use this package. That way, even
@@ -407,7 +407,7 @@ Yaffle's [EventSource polyfill](https://github.com/Yaffle/EventSource),
 the [native browser implementation](https://developer.mozilla.org/en-US/docs/Web/API/EventSource)
 (see [caniuse](https://caniuse.com/?search=EventSource)).
 
-For more complex use-cases, a more flexible alternative like might [Mercure](https://mercure.rocks/docs/mercure) be
+For more complex use-cases, a more flexible alternative like [Mercure](https://mercure.rocks/docs/mercure) might be
 preferable thought.
 
 ## Useful read

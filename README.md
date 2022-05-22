@@ -407,6 +407,10 @@ preferable thought.
 ## Useful read
 
 * [HTML Standard 9.2, Server-sent Events](https://html.spec.whatwg.org/multipage/server-sent-events.html)
+* ["Using Server-sent events" on mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
+* ["Limit of 6 concurrent EventSource connections is too low" on chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=275955)
+* ["The Pitfalls of EventSource over HTTP/1.1" on text/plain](https://textslashplain.com/2019/12/04/the-pitfalls-of-eventsource-over-http-1-1/)
+* ["Inter-tab communication using local storage" on the Fastmail blog](https://fastmail.blog/historical/inter-tab-communication-using-local-storage/)
 
 ## License
 

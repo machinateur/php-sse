@@ -77,8 +77,14 @@ $recommendedHeaders = \Machinateur\SSE\MessageStream::getRecommendedHeaders();
 A custom logger can be set using the setter.
 
 ```php
+$stream = new \Machinateur\SSE\MessageStream();
 $stream->setLogger($myLogger);
+// ...
 ```
+
+A note on logger support: The `\Machinateur\SSE\MessageStream` class supports a psr logger to inform about shutdown
+signals (`notice`) and any output sent to the client (`debug`). A logger implementation that logs to the message stream
+itself is available as part of the [demo](/demo) application.
 
 ### Custom message stream
 

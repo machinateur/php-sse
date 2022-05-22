@@ -59,6 +59,9 @@ $stream->run(function () {
 Make sure to read about [when](#when-to-use-this-package) and [why](#why-use-this-package) to use this package, to make
 sure it fits your use-case.
 
+To check out the demo, execute `php -S 127.0.0.1:8001 -t ./demo` in the terminal and open a new
+tab `http://127.0.0.1:8001/message_stream.html`. Make sure to check out the network tab of the browser developer tools.
+
 Below are additional explanations of common use-case scenarios.
 
 ### Recommended headers

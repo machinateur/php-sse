@@ -1,0 +1,127 @@
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2021-2022 machinateur
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>Server-sent events - Demo</title>
+
+    <style>
+        #content {
+            border: solid 1px black;
+            padding: 10px;
+            width: 500px;
+        }
+
+        #list > li {
+            border: solid 1px black;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="content">
+    <h1>Demo</h1>
+
+    <p>
+        EventSource demo using
+        <a href="https://github.com/machinateur/php-sse" target="_blank"><code>machinateur/php-sse</code></a>.
+    </p>
+
+    <hr>
+
+    <ul id="list">
+    </ul>
+
+    <hr>
+
+    <p>
+        Open the browser developer tools and inspect the network tab!
+    </p>
+</div>
+
+<script type="text/javascript">
+    // Use IIFE...
+    (function () {
+        var eventSource;
+
+        var eventList = document.getElementById('list');
+
+        function init() {
+            eventSource = new EventSource('/message_stream.php');
+
+            eventSource.addEventListener('message', function (event) {
+                var newElement = document.createElement('li');
+                newElement.textContent = 'message: ' + event.data;
+
+                eventList.appendChild(newElement);
+            });
+
+            eventSource.addEventListener('ping', function (event) {
+                var time = JSON.parse(event.data).time;
+
+                var newElement = document.createElement('li');
+                newElement.textContent = 'ping at ' + time;
+
+                eventList.appendChild(newElement);
+            });
+
+            eventSource.addEventListener('open', function (event) {
+                console.error('EventSource open: ', event);
+
+                var newElement = document.createElement('li');
+                newElement.textContent = 'open';
+
+                eventList.appendChild(newElement);
+            });
+
+            eventSource.addEventListener('error', function (event) {
+                console.error('EventSource error/close: ', event);
+
+                // Close the event source.
+                eventSource.close();
+
+                var newElement = document.createElement('li');
+                newElement.textContent = 'close';
+
+                eventList.appendChild(newElement);
+            });
+        }
+
+        window.addEventListener('load', function (event) {
+            init();
+        });
+    }());
+</script>
+</body>
+</html>

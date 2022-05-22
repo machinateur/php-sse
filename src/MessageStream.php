@@ -29,14 +29,17 @@ use Machinateur\SSE\Exception\InvalidArgumentException;
 use Machinateur\SSE\Exception\TimeoutException;
 use Machinateur\SSE\Format\StreamFormat;
 use Machinateur\SSE\Message\MessageInterface;
-use Psr\Log\LoggerInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 use Psr\Log\NullLogger;
 
 /**
  * A very basic, but sufficient, implementation of {@see MessageStreamInterface}.
  */
-class MessageStream implements MessageStreamInterface
+class MessageStream implements MessageStreamInterface, LoggerAwareInterface
 {
+    use LoggerAwareTrait;
+
     /**
      * @var resource
      */
@@ -46,11 +49,6 @@ class MessageStream implements MessageStreamInterface
      * @var bool
      */
     protected $streamIsInternal = false;
-
-    /**
-     * @var LoggerInterface
-     */
-    protected $logger;
 
     /**
      * Construct a new {@see MessageStream} object. If no external stream resource for the output is provided, the
@@ -83,17 +81,6 @@ class MessageStream implements MessageStreamInterface
         if ($this->streamIsInternal) {
             \fclose($this->stream);
         }
-    }
-
-    /**
-     * Set a custom logger. Default is {@see NullLogger} from `psr/log`.
-     *
-     * @param LoggerInterface $logger
-     * @return void
-     */
-    public function setLogger(LoggerInterface $logger)
-    {
-        $this->logger = $logger;
     }
 
     /**

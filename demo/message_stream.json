@@ -1,0 +1,28 @@
+[
+  {
+    "comment": "Please wait...",
+    "event": "ping",
+    "data": "{ \"time\": \"2022-05-22 03:43:23\" }"
+  },
+  {
+    "comment": "First message",
+    "data": "First message data"
+  },
+  {
+    "comment": "Second message",
+    "data": "Second message data"
+  },
+  {
+    "comment": "Third message",
+    "data": "Third message data"
+  },
+  {
+    "comment": "Please wait...",
+    "event": "ping",
+    "data": "{ \"time\": \"2022-05-22 03:43:23\" }"
+  },
+  {
+    "comment": "Last message",
+    "data": "Last message data"
+  }
+]

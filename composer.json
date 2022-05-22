@@ -28,5 +28,10 @@
         "classmap": [
             "stubs/Stringable.php"
         ]
+    },
+    "archive": {
+        "exclude": [
+            "/demo"
+        ]
     }
 }

@@ -26,7 +26,7 @@
 namespace Machinateur\SSE\Exception;
 
 /**
- * A special exception type, which triggers
+ * A special exception type, which triggers the stream to shut down, e.g. end the loop.
  */
 class TimeoutException extends \RuntimeException
 {
